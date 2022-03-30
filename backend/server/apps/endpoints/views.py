@@ -32,15 +32,15 @@ class MLAlgorithmStatusViewSet(
     serializer_class = MLAlgorithmStatusSerializer
     queryset = MLAlgorithmStatus.objects.all()
 
-    def perform_create(self, serializer):
-        try:
-            with transaction.atomic():
-                instance = serializer.save(active=True)
-                # set active=False for other statuses
-                deactivate_other_statuses(instance)
+    # def perform_create(self, serializer):
+    #     try:
+    #         with transaction.atomic():
+    #             instance = serializer.save(active=True)
+    #             # set active=False for other statuses
+    #             deactivate_other_statuses(instance)
 
-        except Exception as e:
-            raise APIException(str(e))
+    #     except Exception as e:
+    #         raise APIException(str(e))
 
 
 class MLRequestViewSet(
