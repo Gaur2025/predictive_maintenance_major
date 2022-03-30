@@ -9,6 +9,9 @@ from backend.server.apps.ml.failure_classifier.random_forest import RandomForest
 class MLTest(TestCase):
     def test_rf_algorithm(self):
         input_data = {
+            
+    
+
 
 
 
